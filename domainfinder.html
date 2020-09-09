@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Domain Finder</title>
+    <script src="tlds.json">
     <script src="./domainfinder.js"></script>
     <link rel="stylesheet" href="./domainfinder.css">
   </head>
@@ -11,9 +12,21 @@
       <textarea id="input_names" placeholder="Insert array of cool names here"></textarea>
       <textarea id="input_tlds" placeholder="Insert list of TLDs (leave blank if no custom list)"></textarea>
       <button id="begin" onclick="pressed()">Find Cool Domains</button>
+      <div id="output_container">
+        <textarea id="output" placeholder="Your cool domains will show up here"></textarea>
+      </div>
     </div>
     <script>
-      
+      function pressed() {
+        var listtld = "";
+        if (document.getElementById("input_tlds").value = "") {
+          listtld = JSON.parse(tlds);
+        } else {
+          listtld = document.getElementById("input_tlds").value.split(",");
+        }
+        var names = document.getElementById("input_names").value.split(",");
+        document.getElementById("output").value = generateDomains(names, listtld).join("&#13;&#10;");
+      }
     </script>
   </body>
 </html>
