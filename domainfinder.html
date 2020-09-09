@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Domain Finder</title>
-    <script src="tlds.json">
+    <script src="./tlds.json"></script>
     <script src="./domainfinder.js"></script>
     <link rel="stylesheet" href="./domainfinder.css">
   </head>
@@ -25,7 +25,7 @@
           listtld = document.getElementById("input_tlds").value.split(",");
         }
         var names = document.getElementById("input_names").value.split(",");
-        document.getElementById("output").value = generateDomains(names, listtld).join("&#13;&#10;");
+        document.getElementById("output").value = generateDomains(names, listtld).join("        ");
       }
     </script>
   </body>
