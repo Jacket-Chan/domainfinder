@@ -1,0 +1,4 @@
+
+function generateDomains(search, tldlist) {
+  
+}
