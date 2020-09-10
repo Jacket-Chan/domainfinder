@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Domain Finder</title>
-    <script src="./tlds.json"></script>
+    <script src="./tlds.js"></script>
     <script src="./domainfinder.js"></script>
     <link rel="stylesheet" href="./domainfinder.css">
   </head>
@@ -19,13 +19,13 @@
     <script>
       function pressed() {
         var listtld = "";
-        if (document.getElementById("input_tlds").value = "") {
-          listtld = JSON.parse(tlds);
+        if (document.getElementById("input_tlds").value == "") {
+          listtld = tlds_default;
         } else {
-          listtld = document.getElementById("input_tlds").value.split(",");
+          listtld = document.getElementById("input_tlds").value.toLowerCase().split(",");
         }
-        var names = document.getElementById("input_names").value.split(",");
-        document.getElementById("output").value = generateDomains(names, listtld).join("        ");
+        var names = document.getElementById("input_names").value.toLowerCase().split(",");
+        document.getElementById("output").value = generateDomains(names, listtld);
       }
     </script>
   </body>
